@@ -14,6 +14,7 @@ This project showcases my skills, projects, and professional background with a c
 - 📄 **CV Download** (PDF)
 - 📧 **Working Contact Form** (EmailJS)
 - 🔐 Secure environment variables
+- 🌐 Deploymend on vercel
 
 
 ## 🛠 Tech Stack
