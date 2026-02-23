@@ -69,7 +69,7 @@ export default function Home() {
 
               <a
                   className="btn"
-                  href="/Afeef_Shafi_CV.pdf"
+                  href="/CV.pdf"
                   download
                   target="_blank"
                   rel="noreferrer"
