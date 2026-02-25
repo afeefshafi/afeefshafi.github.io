@@ -21,9 +21,6 @@ export default function About() {
                 <span className="chip">
                   <FiMapPin /> {site.location}
                 </span>
-                <span className="chip">
-                  <FiBookOpen /> Software Engineering
-                </span>
               </div>
             </div>
 
