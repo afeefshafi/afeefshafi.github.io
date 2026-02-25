@@ -16,7 +16,7 @@ export const highlights = [
     desc: 'Cardiff Metropolitan University,UK',
   },
   {
-    title: 'National Certificate in Information Communication Technology Technician (NVQ Level 4)',
+    title: 'National Certificate in Information & Communication Technology Technician (NVQ Level 4)',
     desc: 'Miani Technical Institute',
   },
 ]
