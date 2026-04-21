@@ -6,8 +6,8 @@ export const projects = [
     tags: ['Framer Motion', 'SEO', 'Vercel'],
     desc: 'Animated sections, smooth navigation, and fast performance.',
     links: {
-      demo: '#',
-      code: 'https://github.com/afeefshafi/personal-portfolio',
+      demo: 'https://afeefshafi.vercel.app/',
+      code: 'https://github.com/afeefshafi/afeefshafi.github.io',
     },
   },
 ]
