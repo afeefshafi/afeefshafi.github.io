@@ -7,6 +7,7 @@ import Card from '../components/Card.jsx'
 import { site } from '../data/site.js'
 import { FiArrowRight, FiCheckCircle, FiDownload } from 'react-icons/fi'
 import { projects } from '../data/projects.js'
+import me from '../assets/me.jpg';  
 
 export default function Home() {
   return (
@@ -18,12 +19,10 @@ export default function Home() {
             {/* ✅ IMAGE — Mobile 1st | Desktop Left (NO CARD/BOX) */}
             <div className="lg:col-span-5 order-1 lg:order-1">
                   <img
-                    src="/me.jpg"
-                    alt="Afeef Shafi"
-                    className="h-[360px] w-full object-contain sm:h-[420px] lg:h-[520px]"
-                    loading="eager"
-                    draggable="false"
-                  />
+                  src={me}   // ✅ CHANGE THIS
+                  alt="Afeef Shafi"
+                  className="h-[360px] w-full object-contain sm:h-[420px] lg:h-[520px]"
+                />
             </div>
 
             {/* ✅ TEXT — Mobile 2nd | Desktop Right */}
