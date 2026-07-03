@@ -1023,3 +1023,13 @@ transform:scale(.85);
 }
 
 }
+
+/* Chatbot position fine-tuning */
+#chatbase-script {
+  z-index: 999999;
+}
+
+.chatbase-chat-button {
+  bottom: 25px !important;
+  right: 25px !important;
+}
