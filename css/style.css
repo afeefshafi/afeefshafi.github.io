@@ -137,8 +137,8 @@ section{
 }
 
 .image-box{
-    width:420px;
-    height:420px;
+    width:450px;
+    height:450px;
     border-radius:50%;
     overflow:hidden;
     border:0px solid var(--bg);
