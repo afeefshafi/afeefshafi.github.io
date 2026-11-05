@@ -11,6 +11,7 @@
 
     --text:#111827;
     --text2:#475569;
+    --text-light:#3d81e1;
 
     --primary:#00d4ff;
     --secondary:#7c3aed;
@@ -162,17 +163,18 @@ section{
 }
 
 .hero-content h3{
-    color:var(--secondary);
+    color:var(--text-light);
     font-size:1.3rem;
 }
 
 .hero-content h1{
+    color:var(--text);
     font-size:4rem;
     margin:10px 0;
 }
 
 .hero-content h2{
-    color:var(--secondary);
+    color:var(--text-light);
     margin-bottom:15px;
 }
 
