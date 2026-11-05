@@ -139,7 +139,7 @@ section{
 .image-box{
     width:450px;
     height:450px;
-    border-radius:50%;
+    border-radius:45%;
     overflow:hidden;
     border:0px solid var(--bg);
     -webkit-border-radius:50%;
