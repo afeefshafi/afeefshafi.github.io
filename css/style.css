@@ -107,7 +107,7 @@ section{
     height:80px;
     border-radius:50%;
     border:6px solid var(--bg);
-    /*rgba(255,255,255,.2)(old)*/border-top:6px solid var(--primary);
+    /*rgba(255,255,255,.2)(old)*/border-top:6px solid var(--text-light);
     display:inline-block;
     animation:spin 5s linear infinite;
     -webkit-animation:spin 5s linear infinite;
@@ -212,7 +212,7 @@ section{
 }
 
 .secondary{
-    border:2px solid var(--primary);
+    border:2px solid var(--text-light);
     color:var(--text);
 }
 
@@ -339,7 +339,7 @@ section{
 .skill-box:hover{
     transform:translateY(-10px);
 
-    border-color:#00d4ff;
+    border-color:var(--text-light);
 
     box-shadow:
     0 0 20px rgba(0,212,255,.4);
@@ -701,12 +701,12 @@ width:100%;
 
 #contactForm input::placeholder,
 #contactForm textarea::placeholder{
-    color:var(--text-light);
+    color:var(--text);
 }
 
 #contactForm input:focus,
 #contactForm textarea:focus{
-    border-color:var(--primary);
+    border-color:var(--text-light);
     box-shadow:0 0 15px rgba(0,123,255,.15);
 }
 
@@ -760,7 +760,7 @@ width:100%;
 footer{
     padding:30px;
     text-align:center;
-    border-top:1px solid var(--border);
+    border-top:2px solid var(--border);
 }
 
 footer p{
@@ -779,7 +779,7 @@ footer p{
     height:50px;
     border:none;
     border-radius:10px;
-    background:linear-gradient(    90deg,    var(--primary),    var(--secondary));
+    background:linear-gradient(    90deg,    var(--text-light),    var(--secondary));
     color:white;
     cursor:pointer;
     display:none;
