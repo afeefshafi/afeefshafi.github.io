@@ -412,7 +412,7 @@ section{
 .experience-photos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 11px;
     margin-top: 20px;
 }
 
