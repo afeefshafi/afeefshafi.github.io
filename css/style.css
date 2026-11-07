@@ -778,303 +778,496 @@ section{
 
 
 /* ===================================
-   Certificates
+   CERTIFICATIONS & PROJECTS CAROUSEL
 =================================== */
 
-.cert-grid{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.carousel-container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 45px auto 0;
+    position: relative;
 }
 
-.cert-card{
-    background:var(--card);
-    box-shadow: 0px 0px 10px #bebebe;
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:25px;
-    text-align:center;
-    transition:.4s;
-    backdrop-filter:blur(15px);
+/* VIEWPORT */
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    padding: 12px 5px 25px;
 }
 
-.cert-card:hover{
-    transform:translateY(-10px);
+/* TRACK */
+
+.carousel-track {
+    display: flex;
+    gap: 25px;
+    transition: transform .65s cubic-bezier(.22, 1, .36, 1);
+    will-change: transform;
 }
 
-.cert-card img{
-    width:80px;
-    height:80px;
-    object-fit:contain;
-    margin:0 auto 15px;
+/* SLIDES */
+
+.carousel-slide {
+    flex: 0 0 calc((100% - 50px) / 3);
+    min-width: 0;
+    box-sizing: border-box;
 }
 
-.cert-card h3{
-    margin-bottom:10px;
+
+/* ===================================
+   CERTIFICATE CARDS
+=================================== */
+
+.cert-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    padding: 30px 24px;
+    min-height: 370px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    transition: transform .4s ease,
+                border-color .4s ease,
+                box-shadow .4s ease;
 }
 
-.cert-card p{
-    color:var(--text2);
-    margin-bottom:15px;
+.cert-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 35px rgba(0, 212, 255, .12);
 }
 
-.verify-btn{
-    display:inline-block;
-    padding:10px 20px;
-    border-radius:12px;
-    background:linear-gradient(    90deg,    #00d4ff,    #7c3aed);
-    color:#fff;
-    font-weight:600;
-    -webkit-border-radius:12px;
-    -moz-border-radius:12px;
-    -ms-border-radius:12px;
-    -o-border-radius:12px;
+/* CERTIFICATE IMAGE */
+
+.cert-image {
+    width: 85px;
+    height: 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px;
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+    background: rgba(128, 128, 128, .08);
+    border: 1px solid var(--border);
 }
 
-/*==================================
-        PROJECTS
-==================================*/
-
-.projects{
-    padding:100px 20px;
+.cert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.project-grid{
+/* PROVIDER */
 
-    display:flex;
-    justify-content:center;
-    margin-top:50px;
-
+.cert-provider {
+    color: var(--text-light);
+    font-size: .78rem;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
-.project-card{
+/* TITLE */
 
-    width:100%;
-    max-width:700px;
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    transition:.35s ease;
-
-    box-shadow:0 10px 25px #bebebe;
-
+.cert-card h3 {
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
 }
 
-.project-card:hover{
+/* DESCRIPTION */
 
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
-
+.cert-card p {
+    color: var(--text2);
+    font-size: .88rem;
+    line-height: 1.7;
+    margin-bottom: 22px;
 }
 
-.project-content{
+/* VERIFY BUTTON */
 
-    padding:35px;
+.verify-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
 
+    margin-top: auto;
+    padding: 11px 17px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(90deg, #00d4ff, #7c3aed);
+    color: #fff;
+
+    font-size: .82rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: .3s ease;
 }
 
-.project-header{
-
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    margin-bottom:20px;
-
-    color:#6b6c6c;
-
-    font-weight:600;
-
+.verify-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 212, 255, .25);
 }
 
-.project-header i{
 
-    width:45px;
-    height:45px;
+/* ===================================
+   PROJECT CARD
+=================================== */
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:rgba(41, 42, 42, 0.12);
-
-    border-radius:12px;
-
-    font-size:18px;
-
+.project-carousel .carousel-track {
+    justify-content: flex-start;
 }
 
-.project-content h3{
 
-    margin-bottom:18px;
+/* PROJECT CARD - ORIGINAL SIZE */
 
-    font-size:30px;
-
+.project-carousel .carousel-slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.project-content p{
+.project-card {
+    width: 100%;
+    max-width: 700px;
 
-    line-height:1.8;
+    margin: 0 auto;
 
-    color:var(--text2);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
 
-    margin-bottom:25px;
-
+    transition: border-color .3s ease,
+                box-shadow .3s ease;
 }
 
-.tech-stack{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-bottom:25px;
-
+.project-content {
+    padding: 35px;
 }
 
-.tech-stack span{
+/* MOBILE */
 
-    padding:8px 16px;
+@media(max-width: 600px) {
+    .project-card {
+        max-width: 100%;
+    }
 
-    border-radius:30px;
-
-    background:#e8f9ff;
-
-    color:#00bfff;
-
-    font-size:14px;
-
-    font-weight:600;
-
+    .project-content {
+        padding: 25px;
+    }
 }
 
-.project-features{
 
-    list-style:none;
-
-    margin-bottom:30px;
-
+.project-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
 }
 
-.project-features li{
-
-    margin-bottom:12px;
-
-    color:var(--text2);
-
+.project-content {
+    padding: 40px;
 }
 
-.project-features i{
+/* PROJECT HEADER */
 
-    color:#00c853;
-
-    margin-right:8px;
-
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
-.project-buttons{
+.project-icon {
+    width: 55px;
+    height: 55px;
 
-    display:flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    gap:15px;
+    background: rgba(0, 212, 255, .10);
+    color: var(--text-light);
 
+    border-radius: 15px;
+    font-size: 1.4rem;
+}
+
+.project-header span {
+    display: block;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.project-header small {
+    display: block;
+    color: var(--text2);
+    margin-top: 5px;
+}
+
+/* PROJECT TITLE */
+
+.project-content h3 {
+    color: var(--text);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.project-content p {
+    color: var(--text2);
+    font-size: .95rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+/* PROJECT TECHNOLOGIES */
+
+.project-content .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.project-content .tech-stack span {
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 212, 255, .10);
+    border: 1px solid rgba(0, 212, 255, .18);
+
+    color: var(--text-light);
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+/* PROJECT FEATURES */
+
+.project-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.project-feature-grid div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--text2);
+    font-size: .9rem;
+}
+
+.project-feature-grid i {
+    color: #00c853;
+}
+
+/* PROJECT BUTTONS */
+
+.project-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .github-btn,
-.live-btn{
+.live-btn {
+    flex: 1;
+    min-width: 180px;
 
-    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
-    text-decoration:none;
+    padding: 15px 20px;
 
-    display:flex;
+    border-radius: 12px;
 
-    justify-content:center;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
 
-    align-items:center;
+    transition: .3s ease;
+}
 
-    gap:10px;
+.github-btn {
+    background: #24292f;
+}
 
-    padding:15px;
+.github-btn:hover {
+    background: #000;
+    transform: translateY(-3px);
+}
 
-    border-radius:12px;
+.live-btn {
+    background: linear-gradient(90deg, #00d4ff, #7c3aed);
+}
 
-    color:#fff;
+.live-btn:hover {
+    transform: translateY(-3px);
+    opacity: .9;
+}
 
-    font-weight:600;
 
-    transition:.3s;
+/* ===================================
+   CAROUSEL NAVIGATION
+=================================== */
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    margin-top: 20px;
+}
+
+.carousel-btn {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--card);
+    color: var(--text);
+
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background: linear-gradient(90deg, #00d4ff, #7c3aed);
+    color: #fff;
+    border-color: transparent;
+    transform: scale(1.08);
+}
+
+.carousel-btn:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+/* DOTS */
+
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.carousel-dot {
+    width: 9px;
+    height: 9px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: var(--border);
+    cursor: pointer;
+
+    transition: .35s ease;
+}
+
+.carousel-dot.active {
+    width: 27px;
+    background: linear-gradient(90deg, #00d4ff, #7c3aed);
+}
+
+
+/* ===================================
+   TABLET RESPONSIVE
+=================================== */
+
+@media(max-width: 900px) {
+
+    .carousel-slide {
+        flex: 0 0 calc((100% - 25px) / 2);
+    }
+
+    .project-carousel .carousel-slide {
+        flex: 0 0 100%;
+    }
 
 }
 
-.github-btn{
 
-    background:#24292f;
+/* ===================================
+   MOBILE RESPONSIVE
+=================================== */
 
-}
+@media(max-width: 600px) {
 
-.github-btn:hover{
+    .carousel-container {
+        margin-top: 30px;
+    }
 
-    background:#000;
+    .carousel-track {
+        gap: 15px;
+    }
 
-}
+    .carousel-slide {
+        flex: 0 0 100%;
+    }
 
-.live-btn{
+    .project-carousel .carousel-slide {
+        flex: 0 0 100%;
+    }
 
-    background:linear-gradient(90deg,#00d4ff,#7c3aed);
+    .cert-card {
+        min-height: 350px;
+        padding: 25px 20px;
+    }
 
-}
+    .project-content {
+        padding: 25px 20px;
+    }
 
-.live-btn:hover{
+    .project-content h3 {
+        font-size: 1.4rem;
+    }
 
-    opacity:.9;
+    .project-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
 
-}
+    .project-buttons {
+        flex-direction: column;
+    }
 
-@media(max-width:768px){
+    .github-btn,
+    .live-btn {
+        width: 100%;
+    }
 
-.project-card{
-
-max-width:100%;
-
-}
-
-.project-content{
-
-padding:25px;
-
-}
-
-.project-content h3{
-
-font-size:24px;
-
-}
-
-.project-buttons{
-
-flex-direction:column;
-
-}
-
-.github-btn,
-.live-btn{
-
-width:100%;
-
-}
+    .carousel-controls {
+        gap: 15px;
+    }
 
 }
+
 
 /* ==========================
    CONTACT SECTION

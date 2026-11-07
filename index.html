@@ -328,97 +328,140 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 
 
-<!-- CERTIFICATIONS -->
+
+<!-- ===================================
+     CERTIFICATIONS CAROUSEL
+=================================== -->
 
 <section id="certifications" class="certifications section">
 
     <div class="section-title">
         <h2>Certifications</h2>
+        <p>Professional certifications and achievements</p>
     </div>
 
-    <div class="cert-grid">
+    <div class="carousel-container" data-carousel>
 
-        <!-- Certificate 1 -->
+        <div class="carousel-viewport">
+            <div class="carousel-track">
 
-        <div class="cert-card">
+                <!-- Certificate 1 -->
+                <article class="cert-card carousel-slide">
 
-            <img src="images/Cisco.png"
-                 alt="Cisco Logo">
+                    <div class="cert-image">
+                        <img src="images/Cisco.png" alt="Cisco Logo">
+                    </div>
 
-            <h3>Python Essentials 1</h3>
+                    <span class="cert-provider">Cisco Networking Academy</span>
 
-            <p>Cisco Networking Academy</p>
+                    <h3>Python Essentials 1</h3>
 
-            <a href="https://www.credly.com/badges/62f7231a-391d-4d78-9ba3-0c328d2f966f/linked_in_profile"
-               target="_blank"
-               class="verify-btn">
+                    <p>Fundamentals of Python programming, syntax and basic problem-solving.</p>
 
-                Verify Credential
+                    <a href="https://www.credly.com/badges/62f7231a-391d-4d78-9ba3-0c328d2f966f/linked_in_profile"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="verify-btn">
+                        <i class="fa-solid fa-shield-check"></i>
+                        Verify Credential
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
 
-            </a>
+                </article>
 
+                <!-- Certificate 2 -->
+                <article class="cert-card carousel-slide">
+
+                    <div class="cert-image">
+                        <img src="images/postman.png" alt="Postman Logo">
+                    </div>
+
+                    <span class="cert-provider">Postman</span>
+
+                    <h3>Postman API Fundamentals Student Expert</h3>
+
+                    <p>API fundamentals, requests, responses and API testing using Postman.</p>
+
+                    <a href="https://badges.parchment.com/public/assertions/fKGbmo2ZSNOcfboE-ixLeQ?identity__email=afeefshafii@gmail.com"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="verify-btn">
+                        <i class="fa-solid fa-shield-check"></i>
+                        Verify Credential
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </article>
+
+                <!-- Certificate 3 -->
+                <article class="cert-card carousel-slide">
+
+                    <div class="cert-image">
+                        <img src="images/microsoft.png" alt="Microsoft Logo">
+                    </div>
+
+                    <span class="cert-provider">Microsoft & LinkedIn</span>
+
+                    <h3>Career Essentials in Generative AI</h3>
+
+                    <p>Introduction to generative AI concepts, applications and AI productivity.</p>
+
+                    <a href="https://www.linkedin.com/learning/certificates/a637935d1f15f29b395f7cf044a07d4235da7c17d86600882ca20262a0fd81e0"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="verify-btn">
+                        <i class="fa-solid fa-shield-check"></i>
+                        Verify Credential
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </article>
+
+                <!-- Certificate 4 -->
+                <article class="cert-card carousel-slide">
+
+                    <div class="cert-image">
+                        <img src="images/Cisco.png" alt="Cisco Logo">
+                    </div>
+
+                    <span class="cert-provider">Cisco Networking Academy</span>
+
+                    <h3>Introduction to Cybersecurity</h3>
+
+                    <p>Fundamental cybersecurity concepts, threats and security practices.</p>
+
+                    <a href="https://www.credly.com/badges/43677652-d15a-432a-ae1c-7d3a475ed3d9/public_url"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="verify-btn">
+                        <i class="fa-solid fa-shield-check"></i>
+                        Verify Credential
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </article>
+
+            </div>
         </div>
 
-        <!-- Certificate 2 -->
+        <!-- Carousel Controls -->
+        <div class="carousel-controls">
 
-        <div class="cert-card">
+            <button class="carousel-btn prev-btn"
+                    type="button"
+                    aria-label="Previous certificates"
+                    data-prev>
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
 
-            <img src="images/postman.png"
-                 alt="Postman Logo">
+            <div class="carousel-dots" aria-label="Certificate pages"></div>
 
-            <h3>Postman API Fundamentals Student Expert</h3>
-
-            <p>Postman</p>
-
-            <a href="https://badges.parchment.com/public/assertions/fKGbmo2ZSNOcfboE-ixLeQ?identity__email=afeefshafii@gmail.com"
-               target="_blank"
-               class="verify-btn">
-
-                Verify Credential
-
-            </a>
-
-        </div>
-
-        <!-- Certificate 3 -->
-
-        <div class="cert-card">
-
-            <img src="images/microsoft.png"
-                 alt="Microsoft Logo">
-
-            <h3>Career Essentials in Generative AI</h3>
-
-            <p>Microsoft & LinkedIn</p>
-
-            <a href="https://www.linkedin.com/learning/certificates/a637935d1f15f29b395f7cf044a07d4235da7c17d86600882ca20262a0fd81e0"
-               target="_blank"
-               class="verify-btn">
-
-                Verify Credential
-
-            </a>
-
-        </div>
-
-        <!-- Certificate 4 -->
-
-        <div class="cert-card">
-
-            <img src="images/Cisco.png"
-                 alt="Cisco Logo">
-
-            <h3>Introduction to Cybersecurity</h3>
-
-            <p>Cisco Networking Academy</p>
-
-            <a href="https://www.credly.com/badges/43677652-d15a-432a-ae1c-7d3a475ed3d9/public_url"
-               target="_blank"
-               class="verify-btn">
-
-                Verify Credential
-
-            </a>
+            <button class="carousel-btn next-btn"
+                    type="button"
+                    aria-label="Next certificates"
+                    data-next>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
 
         </div>
 
@@ -426,7 +469,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- PROJECTS -->
+
+<!-- ===================================
+     PROJECTS CAROUSEL
+=================================== -->
+
 <section id="projects" class="projects section">
 
     <div class="section-title">
@@ -434,70 +481,108 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         <p>Some of my recent development work</p>
     </div>
 
-    <div class="project-grid">
+    <div class="carousel-container project-carousel" data-carousel>
 
-        <!-- Project 1 -->
+        <div class="carousel-viewport">
+            <div class="carousel-track">
 
-        <div class="project-card">
+                <!-- PROJECT 1 -->
+                <article class="project-card carousel-slide">
 
-            <div class="project-content">
+                    <div class="project-content">
 
-                <div class="project-header">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <span>ASP.NET Project</span>
-                </div>
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
 
-                <h3>KMC Event Management System</h3>
+                            <div>
+                                <span>ASP.NET Development</span>
+                                <small>Full Stack Project</small>
+                            </div>
+                        </div>
 
-                <p>
-                    A full-stack event management platform built using
-                    ASP.NET Core MVC, Web API, Entity Framework Core
-                    and SQL Server.
-                </p>
+                        <h3>KMC Event Management System</h3>
 
-                <div class="tech-stack">
-                    <span>ASP.NET MVC</span>
-                    <span>Web API</span>
-                    <span>SQL Server</span>
-                    <span>EF Core</span>
-                </div>
+                        <p>
+                            A full-stack event management platform built using
+                            ASP.NET Core MVC, Web API, Entity Framework Core
+                            and SQL Server. The system simplifies event
+                            organization, registration and management.
+                        </p>
 
-                <ul class="project-features">
-                    <li>✓ User Authentication</li>
-                    <li>✓ Event Registration</li>
-                    <li>✓ Organizer Dashboard</li>
-                    <li>✓ REST API Integration</li>
-                </ul>
+                        <div class="tech-stack">
+                            <span>ASP.NET MVC</span>
+                            <span>Web API</span>
+                            <span>SQL Server</span>
+                            <span>EF Core</span>
+                        </div>
 
-                <div class="project-buttons">
+                        <div class="project-feature-grid">
+                            <div><i class="fa-solid fa-check"></i> User Authentication</div>
+                            <div><i class="fa-solid fa-check"></i> Event Registration</div>
+                            <div><i class="fa-solid fa-check"></i> Organizer Dashboard</div>
+                            <div><i class="fa-solid fa-check"></i> REST API Integration</div>
+                        </div>
 
-                    <a href="https://github.com/afeefshafi"
-                       target="_blank"
-                       class="github-btn">
+                        <div class="project-buttons">
 
-                        <i class="fab fa-github"></i>
-                        Code
+                            <a href="https://github.com/afeefshafi/KMC-Event-Management-System"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="github-btn">
+                                <i class="fab fa-github"></i>
+                                View Source Code
+                            </a>
 
-                    </a>
+                            <a href="https://drive.google.com/file/d/16KL1ZFmg1YwwaV7ZDxeK5N29dQYo2RvY/view?usp=sharing"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="live-btn">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                View Demo
+                            </a>
 
-                    <a href="https://drive.google.com/file/d/16KL1ZFmg1YwwaV7ZDxeK5N29dQYo2RvY/view?usp=sharing"
-                       target="_blank"
-                       class="live-btn">
+                        </div>
 
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        Demo
+                    </div>
 
-                    </a>
+                </article>
 
-                </div>
+                <!--
+                ADD MORE PROJECTS HERE
+                Copy another project-card article
+                and place it inside carousel-track.
+                -->
 
             </div>
+        </div>
+
+        <!-- Project Carousel Controls -->
+        <div class="carousel-controls">
+
+            <button class="carousel-btn prev-btn"
+                    type="button"
+                    aria-label="Previous projects"
+                    data-prev>
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div class="carousel-dots" aria-label="Project pages"></div>
+
+            <button class="carousel-btn next-btn"
+                    type="button"
+                    aria-label="Next projects"
+                    data-next>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
 
         </div>
 
     </div>
 
 </section>
+
 
 <!-- CONTACT -->
 <section id="contact" class="contact section">
