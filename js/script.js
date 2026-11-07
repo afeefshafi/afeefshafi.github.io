@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .about-text,
         .timeline-item,
         .education-card,
-        .skill-box,
+        .skill-category,
         .cert-card,
         .project-card,
         #contactForm,

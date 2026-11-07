@@ -658,62 +658,124 @@ section{
 }
 
 
+
 /* ===================================
-   SKILLS
+   TECH STACK - MODERN DESIGN
 =================================== */
 
-.skills-container{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
-
-    gap:25px;
+.tech-stack-container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 45px auto 0;
 }
 
-.skill-box{
-    background:rgba(255,255,255,.05);
-    backdrop-filter:blur(15px);
-
-    border:2px solid var(--border);
-
-    border-radius:20px;
-
-    padding:35px 20px;
-
-    text-align:center;
-
-    transition:.4s ease;
-
-    cursor:pointer;
+.tech-group {
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-.skill-box:hover{
-    transform:translateY(-10px);
-
-    border-color:var(--text-light);
-
-    box-shadow:
-    0 0 20px rgba(0,212,255,.4);
+.tech-group:last-child {
+    border-bottom: none;
 }
 
-.skill-box i{
-    font-size:4rem;
-
-    margin-bottom:15px;
-
-    color:#00d4ff;
-
-    transition:.4s;
+.tech-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
 }
 
-.skill-box:hover i{
-    transform:scale(1.15) rotate(5deg);
+.tech-heading > span {
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 1px;
 }
 
-.skill-box h3{
-    font-size:1rem;
-    font-weight:600;
+.tech-heading h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+    font-weight: 700;
 }
+
+.tech-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 13px 19px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    color: var(--text2);
+    font-size: .92rem;
+    font-weight: 600;
+
+    transition: .3s ease;
+    cursor: default;
+}
+
+.tech-item i {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    transition: .3s ease;
+}
+
+.tech-item small {
+    font-size: .65rem;
+    font-weight: 600;
+    padding: 3px 6px;
+    border-radius: 5px;
+    color: var(--text-light);
+    background: rgba(0,212,255,.10);
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    color: var(--text);
+    box-shadow: 0 7px 20px rgba(0,212,255,.12);
+}
+
+.tech-item:hover i {
+    transform: scale(1.15);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 600px) {
+    .tech-group {
+        padding: 22px 0;
+    }
+
+    .tech-heading h3 {
+        font-size: 1rem;
+    }
+
+    .tech-items {
+        gap: 9px;
+    }
+
+    .tech-item {
+        padding: 11px 13px;
+        font-size: .82rem;
+        gap: 8px;
+    }
+
+    .tech-item i {
+        font-size: 1.1rem;
+    }
+}
+
+
 
 /* ===================================
    Certificates
