@@ -235,7 +235,6 @@ section{
     justify-content:center;
     background:var(--card);
     color:var(--text);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter:blur(10px);
     border:2px solid var(--border);
     transition:.3s;
@@ -343,7 +342,6 @@ section{
 
     border:1px solid var(--border);
 
-    -webkit-backdrop-filter: blur(15px);
     backdrop-filter:blur(15px);
 
     padding:30px;
@@ -1375,6 +1373,32 @@ footer p{
     -moz-border-radius:10px;
     -ms-border-radius:10px;
     -o-border-radius:10px;
+}
+
+/* Larger Back to Top Button */
+#topBtn,
+#backToTop,
+.back-to-top {
+    width: 55px !important;
+    height: 55px !important;
+    font-size: 24px !important;
+    border-radius: 50%;
+}
+
+#topBtn i,
+#backToTop i,
+.back-to-top i {
+    font-size: 23px !important;
+}
+
+@media (max-width: 576px) {
+    #topBtn,
+    #backToTop,
+    .back-to-top {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 21px !important;
+    }
 }
 
 /* ===================================
