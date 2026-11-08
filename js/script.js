@@ -670,7 +670,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
     let slideInterval;
 
-    const intervalTime = 2000;
+    const intervalTime = 3000;
 
     // Show selected image
     function showSlide(index) {
