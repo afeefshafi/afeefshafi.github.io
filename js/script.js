@@ -649,3 +649,108 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+/* =========================================
+   ABOUT SECTION - IMAGE SLIDESHOW
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slideshow = document.querySelector(".about-slideshow");
+
+    if (!slideshow) return;
+
+    const slides = slideshow.querySelectorAll(".about-slide");
+    const dots = slideshow.querySelectorAll(".about-dot");
+
+    const prevBtn = slideshow.querySelector(".about-prev");
+    const nextBtn = slideshow.querySelector(".about-next");
+
+    let currentIndex = 0;
+    let slideInterval;
+
+    const intervalTime = 3500;
+
+    // Show selected image
+    function showSlide(index) {
+
+        slides[currentIndex].classList.remove("active");
+        dots[currentIndex].classList.remove("active");
+
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides[currentIndex].classList.add("active");
+        dots[currentIndex].classList.add("active");
+    }
+
+    // Next image
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    // Previous image
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    // Start automatic slideshow
+    function startSlideshow() {
+
+        stopSlideshow();
+
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            slideInterval = setInterval(nextSlide, intervalTime);
+        }
+    }
+
+    // Stop automatic slideshow
+    function stopSlideshow() {
+        clearInterval(slideInterval);
+    }
+
+    // Previous button
+    nextBtn.addEventListener("click", function () {
+        nextSlide();
+        startSlideshow();
+    });
+
+    // Next button
+    prevBtn.addEventListener("click", function () {
+        prevSlide();
+        startSlideshow();
+    });
+
+    // Dot navigation
+    dots.forEach(function (dot, index) {
+
+        dot.addEventListener("click", function () {
+
+            showSlide(index);
+            startSlideshow();
+
+        });
+
+    });
+
+    // Pause when mouse enters
+    slideshow.addEventListener("mouseenter", stopSlideshow);
+
+    // Resume when mouse leaves
+    slideshow.addEventListener("mouseleave", startSlideshow);
+
+    // Pause when browser tab is inactive
+    document.addEventListener("visibilitychange", function () {
+
+        if (document.hidden) {
+            stopSlideshow();
+        } else {
+            startSlideshow();
+        }
+
+    });
+
+    // Start slideshow
+    startSlideshow();
+
+});
