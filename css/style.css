@@ -1511,130 +1511,173 @@ footer p{
 
 }
 
-/*==================================
-      THEME TOGGLE
-==================================*/
+/* ===================================
+   MODERN CIRCULAR THEME TOGGLE
+=================================== */
 
-.theme-switch{
+.theme-toggle {
 
-    position:fixed;
+    position: fixed;
 
-    top:25px;
-    right:25px;
+    top: 25px;
+    right: 25px;
 
-    z-index:9999;
+    width: 65px;
+    height: 65px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.theme-switch input{
+/* Hover */
 
-    display:none;
+.theme-toggle:hover {
 
-}
-
-.theme-switch label{
-
-    width:78px;
-    height:40px;
-
-    background:#ced1d7;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:0 10px;
-
-    position:relative;
+    transform: rotate(20deg) scale(1.08);
 
     box-shadow:
-    0 8px 20px rgba(0,0,0,.15);
-
-    transition:.4s;
+        0 8px 30px rgba(0,0,0,0.25);
 
 }
 
-.theme-switch .sun{
+/* Icon */
 
-    color:#f59e0b;
-    font-size:18px;
+.theme-toggle i {
 
-    z-index:2;
-
-}
-
-.theme-switch .moon{
-
-    color:#374151;
-    font-size:18px;
-
-    z-index:2;
+    transition: transform 0.4s ease;
 
 }
 
-.theme-switch .ball{
+/* Dark Mode Button */
 
-    position:absolute;
+.dark-theme .theme-toggle {
 
-    left:4px;
+    background: #1e293b;
 
-    width:32px;
-    height:32px;
-
-    background:white;
-
-    border-radius:50%;
-
-    transition:.4s;
+    color: #ffffff;
 
     box-shadow:
-    0 4px 10px rgba(0,0,0,.25);
+        0 5px 25px rgba(0,0,0,0.4);
 
 }
 
-.theme-switch input:checked + label{
+/* Dark Mode Icon */
 
-    background:#334155;
+.dark-theme .theme-toggle i {
 
-}
-
-.theme-switch input:checked + label .ball{
-
-    transform:translateX(38px);
+    transform: rotate(360deg);
 
 }
 
-.theme-switch input:checked + label .moon{
+/* Focus Accessibility */
 
-    color:#fff;
+.theme-toggle:focus-visible {
 
-}
+    outline: 3px solid var(--primary);
 
-.theme-switch input:checked + label .sun{
-
-    color:#fbbf24;
+    outline-offset: 5px;
 
 }
 
-/* Mobile */
+/* Mobile Responsive */
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-.theme-switch{
+    .theme-toggle {
 
-top:18px;
-right:18px;
+        width: 55px;
+        height: 55px;
 
-transform:scale(.85);
+        top: 15px;
+        right: 15px;
+
+        font-size: 24px;
+
+    }
 
 }
 
+/* DESKTOP THEME BUTTON */
+
+.theme-toggle {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+
+    width: 65px;
+    height: 65px;
+
+    background: #fff;
+    color: #111;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 9999;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+
+    transition: .3s ease;
+}
+
+.theme-icon {
+    width: 30px;
+    height: 30px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* DARK MODE */
+
+.dark-theme .theme-toggle {
+    background: #1e293b;
+    color: #fff;
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+    .theme-toggle {
+        width: 55px;
+        height: 55px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .theme-icon {
+        width: 25px;
+        height: 25px;
+    }
 }
 
 /* =========================================

@@ -23,26 +23,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-    <!-- Theme Toggle -->
+<!-- THEME TOGGLE BUTTON -->
 
-<div class="theme-switch">
-
-    <input
-        type="checkbox"
-        id="themeToggle"
-    >
-
-    <label for="themeToggle">
-
-        <i class="fa-solid fa-sun sun"></i>
-
-        <i class="fa-solid fa-moon moon"></i>
-
-        <span class="ball"></span>
-
-    </label>
-
-</div>
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Switch to dark mode"
+    title="Toggle Theme"
+>
+    <svg viewBox="0 0 24 24" class="theme-icon">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="m4.93 4.93 1.42 1.42"></path>
+        <path d="m17.65 17.65 1.42 1.42"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="m4.93 19.07 1.42-1.42"></path>
+        <path d="m17.65 6.35 1.42-1.42"></path>
+    </svg>
+</button>
 
 
 <!-- LOADER -->
@@ -641,9 +642,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <!-- BACK TO TOP -->
 
 <button id="topBtn">
-
     <i class="fa-solid fa-arrow-up"></i>
-
 </button>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
