@@ -1,387 +1,349 @@
-/* ==========================
-   LOADER
-========================== */
 
-window.addEventListener("load", () => {
+/* =========================================
+   PORTFOLIO - COMPLETE JAVASCRIPT
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    /* ==========================
+       LOADER
+    ========================== */
 
     const loader = document.getElementById("loader");
 
-    setTimeout(() => {
-
-        loader.style.opacity = "0";
+    if (loader) {
 
         setTimeout(() => {
-            loader.style.display = "none";
-        }, 600);
 
-    }, 1200);
+            loader.style.opacity = "0";
 
-});
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 600);
 
-/* ==========================
-   TYPING EFFECT
-========================== */
+        }, 1200);
 
-const typingElement =
-document.getElementById("typing");
+    }
 
-const words = [
 
-    "Tech Enthusiast",
-    "Innovative Solution Builder",
+    /* ==========================
+       TYPING EFFECT
+    ========================== */
 
-];
+    const typingElement = document.getElementById("typing");
 
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+    const words = [
+        "Tech Enthusiast",
+        "Innovative Solution Builder"
+    ];
 
-function typeEffect(){
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
-    const currentWord =
-    words[wordIndex];
+    function typeEffect() {
 
-    if(!deleting){
+        if (!typingElement) return;
 
-        typingElement.textContent =
-        currentWord.substring(0, charIndex + 1);
+        const currentWord = words[wordIndex];
 
-        charIndex++;
+        if (!deleting) {
 
-        if(charIndex === currentWord.length){
+            typingElement.textContent =
+                currentWord.substring(0, charIndex + 1);
 
-            deleting = true;
+            charIndex++;
 
-            setTimeout(typeEffect, 1500);
+            if (charIndex === currentWord.length) {
 
-            return;
-        }
+                deleting = true;
 
-    }else{
+                setTimeout(typeEffect, 1500);
 
-        typingElement.textContent =
-        currentWord.substring(0, charIndex - 1);
+                return;
+            }
 
-        charIndex--;
+        } else {
 
-        if(charIndex === 0){
+            typingElement.textContent =
+                currentWord.substring(0, charIndex - 1);
 
-            deleting = false;
+            charIndex--;
 
-            wordIndex++;
+            if (charIndex === 0) {
 
-            if(wordIndex >= words.length){
+                deleting = false;
 
-                wordIndex = 0;
+                wordIndex++;
+
+                if (wordIndex >= words.length) {
+                    wordIndex = 0;
+                }
 
             }
 
         }
 
-    }
-
-    setTimeout(typeEffect,
-    deleting ? 60 : 120);
-
-}
-
-typeEffect();
-
-
-/* ==========================
-   ACTIVE NAV LINKS
-========================== */
-
-const sections =
-document.querySelectorAll("section");
-
-const navLinks =
-document.querySelectorAll(".navbar a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop =
-        section.offsetTop - 150;
-
-        const sectionHeight =
-        section.clientHeight;
-
-        if(pageYOffset >= sectionTop){
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(
-            link.getAttribute("href")
-            === "#" + current
-        ){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/* ==========================
-   HEADER SCROLL EFFECT
-========================== */
-
-const header =
-document.querySelector(".header");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 80){
-
-        header.style.background =
-        "rgba(0,0,0,.85)";
-
-        header.style.boxShadow =
-        "0 10px 25px rgba(0,0,0,.25)";
-
-    }else{
-
-        header.style.background =
-        "rgba(0,0,0,.15)";
-
-        header.style.boxShadow =
-        "none";
+        setTimeout(typeEffect, deleting ? 60 : 120);
 
     }
 
-});
+    if (typingElement) {
+        typeEffect();
+    }
 
 
-/* ==========================
-   BACK TO TOP BUTTON
-========================== */
+    /* ==========================
+       ACTIVE NAVIGATION LINKS
+    ========================== */
 
-const topBtn =
-document.getElementById("topBtn");
+    const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
+    const navLinks = document.querySelectorAll(".navbar a");
 
-    if(window.scrollY > 500){
+    window.addEventListener("scroll", () => {
 
-        topBtn.style.display = "block";
+        let current = "";
 
-    }else{
+        sections.forEach(section => {
 
-        topBtn.style.display = "none";
+            const sectionTop = section.offsetTop - 150;
+
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+
+        });
+
+        navLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+
+        });
+
+    });
+
+
+    /* ==========================
+       HEADER SCROLL EFFECT
+    ========================== */
+
+    const header = document.querySelector(".header");
+
+    window.addEventListener("scroll", () => {
+
+        if (!header) return;
+
+        if (window.scrollY > 80) {
+
+            header.style.background = "rgba(0,0,0,.85)";
+
+            header.style.boxShadow =
+                "0 10px 25px rgba(0,0,0,.25)";
+
+        } else {
+
+            header.style.background = "rgba(0,0,0,.15)";
+
+            header.style.boxShadow = "none";
+
+        }
+
+    });
+
+
+    /* ==========================
+       BACK TO TOP BUTTON
+    ========================== */
+
+    const topBtn = document.getElementById("topBtn");
+
+    if (topBtn) {
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 500) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+
+        });
+
+        topBtn.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
 
     }
 
-});
 
-topBtn.addEventListener("click", () => {
+    /* ==========================
+       COUNTER ANIMATION
+    ========================== */
 
-    window.scrollTo({
+    const counters = document.querySelectorAll(".counter");
 
-        top:0,
-        behavior:"smooth"
+    counters.forEach(counter => {
 
-    });
+        counter.innerText = "0";
 
-});
+        const updateCounter = () => {
 
+            const target = +counter.getAttribute("data-target");
 
-/* ==========================
-   SCROLL REVEAL ANIMATION
-========================== */
+            const current = +counter.innerText;
 
-const revealElements =
-document.querySelectorAll(
+            const increment = target / 120;
 
-".section, .skill-card, .project-card, .cert-card"
+            if (current < target) {
 
-);
+                counter.innerText = `${Math.ceil(current + increment)}`;
 
-function reveal(){
+                setTimeout(updateCounter, 20);
 
-    revealElements.forEach(el => {
+            } else {
 
-        const position =
-        el.getBoundingClientRect().top;
+                counter.innerText = target;
 
-        const screenPosition =
-        window.innerHeight - 100;
+            }
 
-        if(position < screenPosition){
+        };
 
-            el.classList.add("show");
-
-        }
+        updateCounter();
 
     });
 
-}
 
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
+    /* ==========================
+       EMAILJS CONTACT FORM
+    ========================== */
+
+    if (typeof emailjs !== "undefined") {
+
+        emailjs.init("yuJ5I90PQOKAPSmWx");
+
+    }
+
+    const contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+
+        contactForm.addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            if (typeof emailjs === "undefined") {
+
+                alert("Email service is currently unavailable.");
+
+                return;
+            }
+
+            emailjs.sendForm(
+
+                "service_hcptht9",
+                "template_8rc0298",
+                this
+
+            )
+
+            .then(() => {
+
+                alert("Message sent successfully!");
+
+                contactForm.reset();
+
+            })
+
+            .catch(error => {
+
+                console.error(error);
+
+                alert("Failed to send message.");
+
+            });
+
+        });
+
+    }
 
 
-/* ==========================
-   COUNTER ANIMATION
-========================== */
+    /* ==========================
+       CIRCULAR THEME TOGGLE
+    ========================== */
 
-const counters =
-document.querySelectorAll(".counter");
+    const themeToggle = document.getElementById("themeToggle");
 
-counters.forEach(counter => {
+    const sunIcon = `
+        <svg viewBox="0 0 24 24" class="theme-icon">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.42 1.42"></path>
+            <path d="m17.65 17.65 1.42 1.42"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m4.93 19.07 1.42-1.42"></path>
+            <path d="m17.65 6.35 1.42-1.42"></path>
+        </svg>
+    `;
 
-    counter.innerText = "0";
+    const moonIcon = `
+        <svg viewBox="0 0 24 24" class="theme-icon">
+            <path d="M20.9 13A9 9 0 0 1 11 3.1
+            9 9 0 1 0 20.9 13Z"></path>
+        </svg>
+    `;
 
-    const updateCounter = () => {
+    function setTheme(isDark) {
 
-        const target =
-        +counter.getAttribute("data-target");
+        document.body.classList.toggle("dark-theme", isDark);
 
-        const current =
-        +counter.innerText;
+        if (!themeToggle) return;
 
-        const increment =
-        target / 120;
+        themeToggle.innerHTML = isDark ? moonIcon : sunIcon;
 
-        if(current < target){
-
-            counter.innerText =
-            `${Math.ceil(
-                current + increment
-            )}`;
-
-            setTimeout(updateCounter, 20);
-
-        }else{
-
-            counter.innerText = target;
-
-        }
-
-    };
-
-    updateCounter();
-
-});
-
-
-/* ==========================
-   EMAILJS
-========================== */
-
-(function(){
-
-    emailjs.init("yuJ5I90PQOKAPSmWx"); /* Public key */
-
-})();
-
-const contactForm =
-document.getElementById("contactForm");
-
-contactForm.addEventListener(
-"submit",
-function(e){
-
-    e.preventDefault();
-
-    emailjs.sendForm(
-
-        "service_hcptht9", /* My service id */
-        "template_8rc0298", /* My template id */
-        this
-
-    )
-
-    .then(() => {
-
-        alert(
-        "Message sent successfully!"
+        themeToggle.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light mode" : "Switch to dark mode"
         );
 
-        contactForm.reset();
+        localStorage.setItem("theme", isDark ? "dark" : "light");
 
-    })
+    }
 
-    .catch(error => {
+    const savedTheme = localStorage.getItem("theme");
 
-        console.error(error);
+    setTheme(savedTheme === "dark");
 
-        alert(
-        "Failed to send message."
-        );
+    if (themeToggle) {
 
-    });
+        themeToggle.addEventListener("click", () => {
 
-});
+            const isDark =
+                !document.body.classList.contains("dark-theme");
+
+            setTheme(isDark);
+
+        });
+
+    }
 
 
-/* CIRCULAR THEME TOGGLE */
+    /* =========================================
+       ADVANCED SCROLL REVEAL ANIMATION
+    ========================================= */
 
-const themeToggle = document.getElementById("themeToggle");
-
-const sunIcon = `
-<svg viewBox="0 0 24 24" class="theme-icon">
-    <circle cx="12" cy="12" r="4"></circle>
-    <path d="M12 2v2"></path>
-    <path d="M12 20v2"></path>
-    <path d="m4.93 4.93 1.42 1.42"></path>
-    <path d="m17.65 17.65 1.42 1.42"></path>
-    <path d="M2 12h2"></path>
-    <path d="M20 12h2"></path>
-    <path d="m4.93 19.07 1.42-1.42"></path>
-    <path d="m17.65 6.35 1.42-1.42"></path>
-</svg>`;
-
-const moonIcon = `
-<svg viewBox="0 0 24 24" class="theme-icon">
-    <path d="M20.9 13A9 9 0 0 1 11 3.1
-    9 9 0 1 0 20.9 13Z"></path>
-</svg>`;
-
-function setTheme(isDark) {
-
-    document.body.classList.toggle("dark-theme", isDark);
-
-    themeToggle.innerHTML = isDark ? moonIcon : sunIcon;
-
-    themeToggle.setAttribute(
-        "aria-label",
-        isDark ? "Switch to light mode" : "Switch to dark mode"
-    );
-
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-}
-
-setTheme(localStorage.getItem("theme") === "dark");
-
-themeToggle.addEventListener("click", () => {
-
-    const isDark = !document.body.classList.contains("dark-theme");
-
-    setTheme(isDark);
-
-});
-
-/* =========================================
-   ADVANCED SCROLL REVEAL ANIMATION
-========================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    // Elements to animate
     const revealElements = document.querySelectorAll(`
         .section-title,
         .hero-content,
@@ -391,63 +353,70 @@ document.addEventListener("DOMContentLoaded", () => {
         .timeline-item,
         .education-card,
         .skill-category,
+        .skill-box,
         .cert-card,
         .project-card,
         #contactForm,
         footer
     `);
 
-    // Animation directions
-    const directions = [
-        "from-bottom",
-        "from-left",
-        "from-right",
-        "zoom-in"
-    ];
-
-    // Add reveal classes
     revealElements.forEach((element, index) => {
 
         element.classList.add("scroll-reveal");
 
-        // Alternate animation directions for selected elements
         if (
-            element.matches(".hero-content, .about-text, .timeline-item")
+            element.matches(
+                ".hero-content, .about-text, .timeline-item"
+            )
         ) {
+
             element.classList.add("from-left");
+
         }
 
         else if (
             element.matches(".hero-image, .about-image")
         ) {
+
             element.classList.add("from-right");
+
         }
 
         else if (
-            element.matches(".education-card, .skill-box, .cert-card, .project-card")
+            element.matches(
+                ".education-card, .skill-box, .skill-category, .cert-card, .project-card"
+            )
         ) {
+
             element.classList.add("from-bottom");
 
-            // Stagger effect
             element.style.setProperty(
                 "--reveal-delay",
                 `${(index % 4) * 100}ms`
             );
+
         }
 
         else {
+
             element.classList.add("from-bottom");
+
         }
 
     });
 
-    // Intersection Observer
+
     const observerOptions = {
+
         threshold: 0.12,
+
         rootMargin: "0px 0px -40px 0px"
+
     };
 
+
     const revealObserver = new IntersectionObserver(
+
         (entries) => {
 
             entries.forEach(entry => {
@@ -458,7 +427,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 } else {
 
-                    // Remove class to repeat animation on scrolling back
                     entry.target.classList.remove("is-visible");
 
                 }
@@ -466,45 +434,64 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
         },
+
         observerOptions
+
     );
 
-    // Observe all elements
+
     revealElements.forEach(element => {
+
         revealObserver.observe(element);
+
     });
 
-});
 
-
-/* ===================================
-   ADVANCED CERTIFICATION & PROJECT CAROUSEL
-=================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
+    /* =========================================
+       CERTIFICATION & PROJECT CAROUSEL
+    ========================================= */
 
     const carousels = document.querySelectorAll("[data-carousel]");
 
-    carousels.forEach((carousel) => {
+    carousels.forEach(carousel => {
 
         const track = carousel.querySelector(".carousel-track");
+
+        if (!track) return;
+
         const slides = Array.from(track.children);
 
         const prevBtn = carousel.querySelector("[data-prev]");
+
         const nextBtn = carousel.querySelector("[data-next]");
+
         const dotsContainer = carousel.querySelector(".carousel-dots");
 
+        const controls = carousel.querySelector(".carousel-controls");
+
         let currentIndex = 0;
+
         let visibleSlides = 1;
+
         let maxIndex = 0;
 
         let startX = 0;
+
         let endX = 0;
 
+
         if (slides.length <= 1) {
-            carousel.querySelector(".carousel-controls").style.display = "none";
+
+            if (controls) {
+                controls.style.display = "none";
+            }
+
             return;
+
         }
+
+
+        /* GET VISIBLE SLIDES */
 
         function getVisibleSlides() {
 
@@ -521,57 +508,95 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             return 3;
+
         }
+
+
+        /* UPDATE CAROUSEL */
 
         function updateCarousel() {
 
             visibleSlides = getVisibleSlides();
+
             maxIndex = Math.max(0, slides.length - visibleSlides);
 
             currentIndex = Math.min(currentIndex, maxIndex);
 
-            const slideOffset = slides[currentIndex].offsetLeft - slides[0].offsetLeft;
+            const slideOffset =
+                slides[currentIndex].offsetLeft - slides[0].offsetLeft;
 
-            track.style.transform = `translate3d(-${slideOffset}px, 0, 0)`;
+            track.style.transform =
+                `translate3d(-${slideOffset}px, 0, 0)`;
 
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= maxIndex;
+            if (prevBtn) {
+                prevBtn.disabled = currentIndex === 0;
+            }
+
+            if (nextBtn) {
+                nextBtn.disabled = currentIndex >= maxIndex;
+            }
 
             updateDots();
+
         }
+
+
+        /* CREATE DOTS */
 
         function createDots() {
 
+            if (!dotsContainer) return;
+
             dotsContainer.innerHTML = "";
 
-            const totalDots = Math.max(1, slides.length - visibleSlides + 1);
+            const totalDots =
+                Math.max(1, slides.length - visibleSlides + 1);
 
             for (let i = 0; i < totalDots; i++) {
 
                 const dot = document.createElement("button");
 
                 dot.type = "button";
+
                 dot.classList.add("carousel-dot");
-                dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+
+                dot.setAttribute(
+                    "aria-label",
+                    `Go to slide ${i + 1}`
+                );
 
                 dot.addEventListener("click", () => {
+
                     currentIndex = i;
+
                     updateCarousel();
+
                 });
 
                 dotsContainer.appendChild(dot);
+
             }
 
             updateDots();
+
         }
+
+
+        /* UPDATE DOTS */
 
         function updateDots() {
 
-            const dots = dotsContainer.querySelectorAll(".carousel-dot");
+            if (!dotsContainer) return;
+
+            const dots =
+                dotsContainer.querySelectorAll(".carousel-dot");
 
             dots.forEach((dot, index) => {
 
-                dot.classList.toggle("active", index === currentIndex);
+                dot.classList.toggle(
+                    "active",
+                    index === currentIndex
+                );
 
                 dot.setAttribute(
                     "aria-current",
@@ -579,33 +604,58 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
             });
+
         }
 
-        nextBtn.addEventListener("click", () => {
 
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-                updateCarousel();
-            }
+        /* NEXT BUTTON */
 
-        });
+        if (nextBtn) {
 
-        prevBtn.addEventListener("click", () => {
+            nextBtn.addEventListener("click", () => {
 
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
+                if (currentIndex < maxIndex) {
 
-        });
+                    currentIndex++;
+
+                    updateCarousel();
+
+                }
+
+            });
+
+        }
+
+
+        /* PREVIOUS BUTTON */
+
+        if (prevBtn) {
+
+            prevBtn.addEventListener("click", () => {
+
+                if (currentIndex > 0) {
+
+                    currentIndex--;
+
+                    updateCarousel();
+
+                }
+
+            });
+
+        }
+
 
         /* TOUCH SWIPE */
 
-        track.addEventListener("touchstart", (e) => {
+        track.addEventListener("touchstart", e => {
+
             startX = e.touches[0].clientX;
+
         }, { passive: true });
 
-        track.addEventListener("touchend", (e) => {
+
+        track.addEventListener("touchend", e => {
 
             endX = e.changedTouches[0].clientX;
 
@@ -614,17 +664,23 @@ document.addEventListener("DOMContentLoaded", () => {
             if (Math.abs(difference) > 50) {
 
                 if (difference > 0 && currentIndex < maxIndex) {
+
                     currentIndex++;
+
                 }
 
                 else if (difference < 0 && currentIndex > 0) {
+
                     currentIndex--;
+
                 }
 
                 updateCarousel();
+
             }
 
         }, { passive: true });
+
 
         /* RESPONSIVE UPDATE */
 
@@ -636,18 +692,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
             resizeTimeout = setTimeout(() => {
 
-                currentIndex = Math.min(currentIndex, maxIndex);
+                visibleSlides = getVisibleSlides();
 
                 createDots();
+
                 updateCarousel();
 
             }, 150);
 
         });
 
+
+        /* INITIALIZE */
+
+        visibleSlides = getVisibleSlides();
+
         createDots();
+
         updateCarousel();
 
     });
+
 
 });
