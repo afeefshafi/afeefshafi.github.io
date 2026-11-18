@@ -19,9 +19,121 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/abi.css">
 </head>
 
 <body>
+
+
+<!-- ===================================
+     ABI AI CHATBOT
+=================================== -->
+
+<div id="abi-chatbot">
+
+    <!-- FLOATING BUTTON -->
+    <button class="abi-launcher" id="abiLauncher"
+            aria-label="Open Abi AI Assistant">
+
+        <img src="images/abi2.jpg" alt="Abi">
+
+    </button>
+
+    <!-- CHAT WINDOW -->
+    <div class="abi-window" id="abiWindow">
+
+        <!-- HEADER -->
+        <div class="abi-header">
+
+            <div class="abi-header-profile">
+
+                <img src="images/abi2.jpg"
+                     class="abi-avatar"
+                     alt="Abi">
+
+                <div class="abi-header-info">
+                    <h3>Abi</h3>
+                    <p>
+                        <span class="abi-online-dot"></span>
+                        Online | Here to help
+                    </p>
+                </div>
+
+            </div>
+
+            <button class="abi-close" id="abiClose"
+                    aria-label="Close chat">
+                &times;
+            </button>
+
+        </div>
+
+        <!-- LANGUAGE SELECTOR -->
+        <div class="abi-language">
+
+            <button class="active" data-lang="en">English</button>
+            <button data-lang="ta">தமிழ்</button>
+            <button data-lang="si">සිංහල</button>
+
+        </div>
+
+        <!-- MESSAGES -->
+        <div class="abi-messages" id="abiMessages">
+
+            <div class="abi-welcome">
+                <h4 id="abiWelcomeTitle">Hi! I'm Abi 👋</h4>
+
+                <p id="abiWelcomeText">
+                    Your AI portfolio assistant.
+                    Ask me anything about Afeef.
+                </p>
+            </div>
+
+            <div class="abi-suggestions" id="abiSuggestions">
+
+                <button data-question="Tell me about Afeef">
+                    About Afeef
+                </button>
+
+                <button data-question="What are Afeef's technical skills?">
+                    Technical Skills
+                </button>
+
+                <button data-question="Tell me about Afeef's projects">
+                    Projects
+                </button>
+
+                <button data-question="How can I contact Afeef?">
+                    Contact
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- INPUT -->
+        <form class="abi-input-area" id="abiForm">
+
+            <input
+                type="text"
+                class="abi-input"
+                id="abiInput"
+                placeholder="Ask me anything..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit" class="abi-send"
+                    id="abiSend">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
 
 <!-- THEME TOGGLE BUTTON -->
 
@@ -648,6 +760,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script src="js/script.js"></script>
+<script src="js/abi.js"></script>
 
 </body>
-</html> 
+</html>
